@@ -11,9 +11,19 @@ var user = {
         "id": 4
     }
 }
+var del_id = 2;
+// 删除用户
+app.get('/deleteUser', (req, res) => {
+    fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
+        data = JSON.parse( data );
+        delete data["user" + del_id];
 
+        console.log( data );
+        res.end( JSON.stringify(data));
+    });
+})
 // 获取用户列表
-app.get('/listUsers', (req, res) => {
+app.get('/deleteUser', (req, res) => {
     fs.readFile(__dirname + '/' + 'users.json', 'utf-8', (err, data) => {
         console.log(data)
         console.log('address: ' + util.inspect(server.address()))
@@ -35,6 +45,7 @@ app.get('/addUser', (req, res) => {
     })
 })
 // 显示用户详情，创建了 RESTful API :id（用户id）， 用于读取指定用户的详细信息
+// !!!注意，如果在同一个 server.js 里创建多个 RESTful API ， 并且 :id 放在前边， 那么它会拦截其他的请求
 app.get('/:id', function (req, res) {
     // 首先我们读取已存在的用户
     fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
@@ -44,8 +55,9 @@ app.get('/:id', function (req, res) {
         res.end( JSON.stringify(user));
     });
 })
+
 // 服务器
-var server = app.listen(8081, () => {
+var server = app.listen(8082, () => {
     console.log('address: ' + util.inspect(server.address()))
     var host = server.address().address
     var port = server.address().port
