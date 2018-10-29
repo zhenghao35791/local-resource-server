@@ -9,7 +9,6 @@ function Person() {
 var obj = new Person();
 console.log(util.inspect(obj));
 console.log(util.inspect(obj, true));
-
 // util.isArray(object)
 // 如果给定的参数 "object" 是一个数组返回true，否则返回false。
 util.isArray([])
@@ -18,3 +17,7 @@ util.isArray(new Array)
 // true
 util.isArray({})
 // false
+
+
+console.log( __filename );
+console.log( __dirname );
