@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c33c7b0-2a86-4568-8f40-a62d7c4b4e5c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/config/defaultConfig.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/node/buffer_learn.js" afterPath="$PROJECT_DIR$/node_learn/buffer_learn.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/node/event_learn.js" afterPath="$PROJECT_DIR$/node_learn/event_learn.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/node/event_learn2.js" afterPath="$PROJECT_DIR$/node_learn/event_learn2.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/node/event_learn3.js" afterPath="$PROJECT_DIR$/node_learn/event_learn3.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/node/fileSync_learn.js" afterPath="$PROJECT_DIR$/node_learn/fileSync_learn.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/node/index.js" afterPath="$PROJECT_DIR$/node_learn/index.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/node/module_hello.js" afterPath="$PROJECT_DIR$/node_learn/module_hello.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/node/module_use_hello.js" afterPath="$PROJECT_DIR$/node_learn/module_use_hello.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/node/restful_learn_1.js" afterPath="$PROJECT_DIR$/node_learn/restful_learn_1.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/node/router_learn.js" afterPath="$PROJECT_DIR$/node_learn/router_learn.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/node/server_learn.js" afterPath="$PROJECT_DIR$/node_learn/server_learn.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/node/steam_learn.js" afterPath="$PROJECT_DIR$/node_learn/steam_learn.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/node/users.json" afterPath="$PROJECT_DIR$/node_learn/users.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/node/util_learn.js" afterPath="$PROJECT_DIR$/node_learn/util_learn.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chalk/package.json" afterPath="$PROJECT_DIR$/node_modules/chalk/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/config/defaultConfig.js" afterPath="$PROJECT_DIR$/src/config/defaultConfig.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -37,7 +19,7 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
+            <state relative-caret-position="-183">
               <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
               <folding />
             </state>
@@ -48,7 +30,7 @@
         <entry file="file://$PROJECT_DIR$/src/config/defaultConfig.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="84">
-              <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+              <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -97,8 +79,8 @@
         <option value="$PROJECT_DIR$/node/util_learn.js" />
         <option value="$PROJECT_DIR$/node_server/node_server.js" />
         <option value="$PROJECT_DIR$/src/config/config.js" />
-        <option value="$PROJECT_DIR$/src/config/defaultConfig.js" />
         <option value="$PROJECT_DIR$/src/app.js" />
+        <option value="$PROJECT_DIR$/src/config/defaultConfig.js" />
       </list>
     </option>
   </component>
@@ -435,7 +417,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
+        <state relative-caret-position="-183">
           <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
           <folding />
         </state>
@@ -444,7 +426,7 @@
     <entry file="file://$PROJECT_DIR$/src/config/defaultConfig.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+          <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="19" />
           <folding />
         </state>
       </provider>
