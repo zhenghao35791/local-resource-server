@@ -5,7 +5,8 @@ const readdir = promisify(fs.readdir)
 const Handlebars = require('handlebars')
 const path = require('path')
 const config = require('../config/defaultConfig')
-const mime = require('../helper/mime')
+const mime = require('./mime')
+const compress = require('./compress')
 // 解决中文乱码
 const { StringDecoder } = require('string_decoder');
 const decoder = new StringDecoder('utf8');
@@ -22,8 +23,12 @@ module.exports = async function (req, res, filePath) {
         if(stats.isFile()){
             res.statusCode = 200
             res.setHeader('Content-Type', `${contentType};charset=utf-8`)
-            const fsFilePath = fs.createReadStream(filePath, {encoding: 'utf8'})
-            fsFilePath.pipe(res)
+            let rs = fs.createReadStream(filePath)
+            // 如果文件类型符合compress的类型，就先压缩流，后pipe
+            if (filePath.match(config.compress)) {
+                rs = compress(rs, req, res)
+            }
+            rs.pipe(res)
         } else if(stats.isDirectory()) {
             const files = await readdir(filePath)
             res.statusCode = 200

@@ -1,6 +1,7 @@
 module.exports = {
     hostName: '127.0.0.1',
     port: '8888',
+    compress: /\.(html|js|css)/,
     /*
     * process.cwd() 是指的当前运行node的路径
     * 举例：如果在app.js下执行node app.js，那么process.cwd() = /Users/zhenghao/Documents/vue-mall/src
