@@ -29,7 +29,7 @@ const route = require('./helper/route')
            /!* 使用readFile也可以，也是异步的，但是效率比使用流stream差
              fs.readFile(filePath, (err, data) => {
                 if(err) throw err
-                fs.end(data)
+                res.end(data)
             })*!/
             // 通过流读取filePath的文件，然后通过管道pipe传送给res
             fs.createReadStream(filePath).pipe(res)
