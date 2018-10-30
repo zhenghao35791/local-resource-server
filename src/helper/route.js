@@ -5,6 +5,7 @@ const readdir = promisify(fs.readdir)
 const Handlebars = require('handlebars')
 const path = require('path')
 const config = require('../config/defaultConfig')
+const mime = require('../helper/mime')
 // 解决中文乱码
 const { StringDecoder } = require('string_decoder');
 const decoder = new StringDecoder('utf8');
@@ -14,12 +15,13 @@ const source = fs.readFileSync(tplPath, 'utf8') // 因为只需要读取一次�
 // readFile读取默认是buffer，可以选择toSting或加utf8参数转成string
 const template = Handlebars.compile(source)
 
-module.exports = async function(req, res, filePath) {
+module.exports = async function (req, res, filePath) {
     try {
         const stats = await stat(filePath)
+        const contentType = mime(filePath)
         if(stats.isFile()){
             res.statusCode = 200
-            res.setHeader('Content-Type', 'text/plain;charset=utf-8')
+            res.setHeader('Content-Type', `${contentType};charset=utf-8`)
             const fsFilePath = fs.createReadStream(filePath, {encoding: 'utf8'})
             fsFilePath.pipe(res)
         } else if(stats.isDirectory()) {
