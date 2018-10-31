@@ -8,6 +8,7 @@ const config = require('../config/defaultConfig')
 const mime = require('./mime')
 const compress = require('./compress')
 const range = require('./range')
+const cache = require('./cache')
 // 解决中文乱码
 const { StringDecoder } = require('string_decoder');
 const decoder = new StringDecoder('utf8');
@@ -23,6 +24,12 @@ module.exports = async function (req, res, filePath) {
         const contentType = mime(filePath)
         if(stats.isFile()){
             res.setHeader('Content-Type', `${contentType};charset=utf-8`)
+            // cache缓存的预处理,如果满足cache的条件，拦截并返回304.
+            if (isFresh(stats, req, res)) {
+                res.statusCode = 304
+                res.end()
+                return
+            }
             // range的预处理
             let rs
             const { code, start, end } = range(stats.size, req, res)
