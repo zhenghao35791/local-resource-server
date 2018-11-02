@@ -45,12 +45,22 @@ const route = require('./helper/route')
     })
 })*/
 
-const server = http.createServer((req, res) => {
-    const filePath = path.join(conf.root, req.url)
-    route(req, res, filePath)
-})
+class Server {
+    constructor (config) {
+        // 用户输入的config和本身的conf做一个合并
+        this.conf = Object.assign({}, conf, config)
+    }
+    start() {
+        const server = http.createServer((req, res) => {
+            const filePath = path.join(this.conf.root, req.url)
+            route(req, res, filePath, this.conf)
+        })
+        server.listen(this.conf.port, this.conf.hostName, () => {
+            const serverUrl = `http://${this.conf.hostName}:${this.conf.port}`
+            console.log(`server start at ${serverUrl}`)
+        })
+    }
+}
 
-server.listen(conf.port, conf.hostName, () => {
-    const serverUrl = `http://${conf.hostName}:${conf.port}`
-    console.log(`server start at ${serverUrl}`)
-})
+module.exports = Server
+

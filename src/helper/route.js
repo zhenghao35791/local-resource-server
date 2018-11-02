@@ -4,7 +4,7 @@ const stat = promisify(fs.stat)
 const readdir = promisify(fs.readdir)
 const Handlebars = require('handlebars')
 const path = require('path')
-const config = require('../config/defaultConfig')
+// const config = require('../config/defaultConfig')
 const mime = require('./mime')
 const compress = require('./compress')
 const range = require('./range')
@@ -17,8 +17,8 @@ const tplPath = path.join(__dirname, '../template/dir.tpl')
 const source = fs.readFileSync(tplPath, 'utf8') // 因为只需要读取一次，所以用同步，后面nodejs会使用文件的缓存。
 // readFile读取默认是buffer，可以选择toSting或加utf8参数转成string
 const template = Handlebars.compile(source)
-
-module.exports = async function (req, res, filePath) {
+// config参数从defaultConfig获取变为传参
+module.exports = async function (req, res, filePath, config) {
     try {
         const stats = await stat(filePath)
         const contentType = mime(filePath)

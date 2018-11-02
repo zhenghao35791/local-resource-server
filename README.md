@@ -1,17 +1,16 @@
-# vue-mall
+# local-resource-server
 vue-nodejs-mongodb
 ## Build Setup
-
+npm i -g local-resource-server
 ``` bash
-# install dependencies
-npm install
+# 使用方法
+local-resource-server ##当前文件夹作为静态服务器根目录
 
-# serve with hot reload at localhost:8080
-npm run dev
+local-resource-server -p 8080 ##设置端口号为8080
 
-# build for production with minification
-npm run build
+local-resource-server -h localhost ##设置 host 为localhost
 
-# build for production and view the bundle analyzer report
-npm run build --report
+local-resource-server -d /usr ##设置根目录为usr
+
+local-resource-server -cache ##设置缓存
 ```
