@@ -2,7 +2,7 @@ const http = require('http')
 const path = require('path')
 const conf = require('./config/defaultConfig')
 const route = require('./helper/route')
-
+const openUrl = require('./helper/openUrl')
 // --------- 注释是没有使用promisify的版本 -------------
 /*const server = http.createServer((req, res) => {
     // 通过req获取请求url的路径
@@ -58,6 +58,7 @@ class Server {
         server.listen(this.conf.port, this.conf.hostName, () => {
             const serverUrl = `http://${this.conf.hostName}:${this.conf.port}`
             console.log(`server start at ${serverUrl}`)
+            openUrl(serverUrl)
         })
     }
 }

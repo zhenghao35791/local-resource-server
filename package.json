@@ -1,8 +1,11 @@
 {
   "name": "vue-mall",
-  "version": "1.0.1",
+  "version": "0.1.0",
   "description": "Vue Mall ",
   "main": "src/app.js",
+  "bin": {
+    "local-resource-server" : "bin/local-resource-server"
+  },
   "author": "hao",
   "private": true,
   "scripts": {
