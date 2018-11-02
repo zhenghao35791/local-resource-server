@@ -1,13 +1,13 @@
 {
-  "name": "vue-mall",
+  "name": "local-resource-server",
   "version": "0.1.0",
   "description": "Vue Mall ",
   "main": "src/app.js",
   "bin": {
-    "local-resource-server" : "bin/local-resource-server"
+    "local-resource-server": "bin/local-resource-server"
   },
   "author": "hao",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
@@ -24,6 +24,7 @@
     "jade": "~1.11.0",
     "mongoose": "^4.10.3",
     "morgan": "^1.9.1",
+    "puppeteer": "^1.10.0",
     "serve-favicon": "^2.5.0",
     "vue": "^2.2.6",
     "vue-infinite-scroll": "^2.0.1",
